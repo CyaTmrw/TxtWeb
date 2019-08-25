@@ -25,7 +25,6 @@ class HomeScreen extends Component {
     />
 	</TouchableOpacity>
 	
-
 	</View>
 
 	<View style= {styles.buttonContainer}>
@@ -39,6 +38,13 @@ class HomeScreen extends Component {
     <Image
      style = {styles.image}
      source={require('../../assets/book.png')}
+    />
+	</TouchableOpacity>
+
+	<TouchableOpacity onPress={() => this.props.navigation.navigate('Wiki')} style={styles.button}>
+    <Image
+     style = {styles.image}
+     source={require('../../assets/wiki.png')}
     />
 	</TouchableOpacity>
 

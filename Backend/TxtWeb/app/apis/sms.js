@@ -2,6 +2,7 @@ const sms = require("express").Router();
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const map = require("../modules/map");
 const yelp = require("../modules/yelp");
+const wiki = require("../modules/wiki");
 const news = require("../modules/news");
 const weather = require("../modules/weather");
 const dictionary = require("../modules/dictionary");
@@ -34,6 +35,14 @@ sms.post("/receive", function(request, response) {
             response.writeHead(200, {'Content-Type': 'text/xml'});
             response.end(twiml.toString());
         })();
+    } else if (type == "wiki") {
+        let topic = input.substring(getPosition(input, ",", 1)+1, input.length).trim();
+        wiki(topic, function (result) {
+            const twiml = new MessagingResponse();
+            twiml.message(result);
+            response.writeHead(200, {'Content-Type': 'text/xml'});
+            response.end(twiml.toString());
+        });
     } else if (type == "weather") {
         let city = input.substring(getPosition(input, ",", 1)+1, getPosition(input, ",", 2)).trim();
         let country = input.substring(getPosition(input, ",", 2)+1, input.length).trim();

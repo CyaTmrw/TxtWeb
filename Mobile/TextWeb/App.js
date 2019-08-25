@@ -5,6 +5,7 @@ import WeatherScreen from './src/screens/WeatherScreen';
 import NewsScreen from './src/screens/NewsScreen';
 import DictionaryScreen from './src/screens/DictionaryScreen';
 import ReviewScreen from './src/screens/ReviewScreen';
+import WikiScreen from './src/screens/WikiScreen';
 
 const navigator = createStackNavigator(
   {
@@ -47,6 +48,13 @@ const navigator = createStackNavigator(
       screen: ReviewScreen,
       navigationOptions: ({navigation}) => ({
         title: "Review",
+        headTitleStyle: {fontSize: 36}
+      })
+    },
+     Wiki: {
+      screen: WikiScreen,
+      navigationOptions: ({navigation}) => ({
+        title: "Wiki",
         headTitleStyle: {fontSize: 36}
       })
     },
