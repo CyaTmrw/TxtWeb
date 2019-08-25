@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+npm-debug.log
+/*.env
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
