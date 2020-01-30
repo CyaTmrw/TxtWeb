@@ -1,7 +1,7 @@
 # TxtWeb
 
 ## About
-This is the repository Txtweb.
+This is the repository for Txtweb.
 
 Link to the devpost: https://devpost.com/software/txtweb
 
